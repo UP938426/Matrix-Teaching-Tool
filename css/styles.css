@@ -1,0 +1,21 @@
+body {
+  background-color: #92A9BD;
+}
+
+hr {
+  border-color: #D3DEDC;
+  border-style: dotted none none;
+  width: 5%;
+  height: 0;
+  border-width: 5px;
+}
+
+table {
+
+
+}
+
+th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }

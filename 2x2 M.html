@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>2x2 Matrix Multilpication</title>
+</head>
+
+<body>
+  <h2>2x2 Matrix Multilpication</h2>
+  <p>Matrices of the same size can be multiplie by one another or by a scalar (real number). By simply multiplying all its elements by this scalar. The final
+    matrix has the same dimensions as the initial matrix.</p><br>
+  <p>We will use Matrices A and B as examples.</p><br>
+
+  A
+  <table>
+    <tbody>
+
+
+        <table>
+            <tbody>
+              <tr>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+
+B
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>0</td>
+                <td>7</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+
+    </tbody>
+  </table><br>
+
+  <p>For Multilpication by a scalar (for example 2) we would use the following maths. We will use Matrix A for this demo</p>
+
+
+
+  2A =
+  <table>
+    <tbody>
+      <tr>
+        <td>2x2</td>
+        <td>4x2</td>
+      </tr>
+      <tr>
+        <td>3x2</td>
+        <td>7x2</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Giving us the result</p>
+  <table>
+    <tbody>
+      <tr>
+        <td>4</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>14</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Multiplication becomes slightly more complicated when a matrix is multiplied by another matrix. We will now look into the required method in a 2x2 senerio, but the same techniques ring true with 3x3, 3x4, 4x3 etc as well.
+    For the product AB to exist, the numer of columns of A must equal the number of rows of B.</p>
+
+  <p> Matrix A is size M x N, and matrix B is size K x L. Therefore N must equal K. The resulting Matrix C will have the dimensions M x L.
+    Below is an example of the rule.</p>
+
+  <table  style=  "padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>a <sub>11</sub></td>
+                <td>a <sub>12</sub></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>a <sub>21</sub></td>
+                <td>a <sub>22</sub></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>B</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>b <sub>11</sub></td>
+                <td>b <sub>12</sub></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>b <sub>21</sub></td>
+                <td>b <sub>22</sub></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table  style=  "padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>(A X B)</td>
+                <td>1</td>
+
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>(a <sub>11</sub>*b <sub>11</sub>) + (a <sub>12</sub>*b <sub>21</sub>)</td>
+
+                <td>(a <sub>11</sub>*b <sub>12</sub>) + (a <sub>12</sub>*b <sub>22</sub>)</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>(a <sub>21</sub>*b <sub>11</sub>) + (a <sub>22</sub>*b <sub>21</sub>)</td>
+
+                <td>(a <sub>21</sub>*b <sub>12</sub>) + (a <sub>22</sub>*b <sub>22</sub>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+        </tbody>
+          </table>
+
+
+
+
+
+<hr>
+<a href="index.html"><h5>Home</h5> </a>
+  </a>
+  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+</body>
+
+</html>

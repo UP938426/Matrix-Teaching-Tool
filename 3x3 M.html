@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <title>3x3 Matrix Multilpication</title>
+</head>
+
+<body>
+  <h2>3x3 Matrix Multilpication</h2>
+  <p>We have covered the basics of multilpication in the 2x2 serial, and will be using the same method here. We will cover 3x3 multiplied by a 3x3 and a 3x3 multiplied a 3x4 to make sure the solution is clear.</p><br>
+  <p>We will use the same Matrices A and B as the last 3x3 topic.</p><br>
+
+  A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B
+  <table>
+    <tbody>
+      <tr>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>3</td>
+                <td>1</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>0</td>
+                <td>0</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>5</td>
+                <td>7</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>2</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>2</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table><br>
+
+  <p>For Multilpication by a scalar it is the same as a 2x2, but we will cover it again quickly to confirm the learning. Lets use A again and multiply it by 3. We would use the following maths.</p>
+
+
+  3A =
+  <table>
+    <tbody>
+      <tr>
+        <td>3x3</td>
+        <td>1x3</td>
+        <td>9x3</td>
+      </tr>
+      <tr>
+        <td>2x3</td>
+        <td>0x3</td>
+        <td>0x3</td>
+      </tr>
+      <tr>
+        <td>1x3</td>
+        <td>2x3</td>
+        <td>4x3</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Giving us the result</p>
+  <table>
+    <tbody>
+      <tr>
+        <td>9</td>
+        <td>3</td>
+        <td>27</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>6</td>
+        <td>12</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Using the same method shown in the 2x2 section, we will need cover A x B.
+    For the product AB to exist, the numer of columns of A must equal the number of rows of B.</p>
+
+  <p> As both A and B are 3x3 the resulting matrix, will also be 3x3.</p>
+
+  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>A</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>a <sub>11</sub></td>
+                <td>a <sub>12</sub></td>
+                <td>a <sub>13</sub></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>a <sub>21</sub></td>
+                <td>a <sub>22</sub></td>
+                <td>a <sub>23</sub></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>a <sub>31</sub></td>
+                <td>a <sub>32</sub></td>
+                <td>a <sub>33</sub></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>B</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>b <sub>11</sub></td>
+                <td>b <sub>12</sub></td>
+                <td>b <sub>13</sub></td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>b <sub>21</sub></td>
+                <td>b <sub>22</sub></td>
+                <td>b <sub>23</sub></td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>b <sub>31</sub></td>
+                <td>b <sub>32</sub></td>
+                <td>b <sub>33</sub></td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>(A X B)</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>(a <sub>11</sub>*b <sub>11</sub>) + (a <sub>12</sub>*b <sub>21</sub>) + (a <sub>13</sub>*b <sub>31</sub>)</td>
+                <td>(a <sub>11</sub>*b <sub>12</sub>) + (a <sub>12</sub>*b <sub>22</sub>) + (a <sub>13</sub>*b <sub>32</sub>)</td>
+                <td>(a <sub>11</sub>*b <sub>13</sub>) + (a <sub>12</sub>*b <sub>23</sub>) + (a <sub>13</sub>*b <sub>33</sub>)</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>(a <sub>21</sub>*b <sub>11</sub>) + (a <sub>22</sub>*b <sub>21</sub>) + (a <sub>23</sub>*b <sub>31</sub>)</td>
+                <td>(a <sub>21</sub>*b <sub>12</sub>) + (a <sub>22</sub>*b <sub>22</sub>) + (a <sub>23</sub>*b <sub>32</sub>)</td>
+                <td>(a <sub>21</sub>*b <sub>13</sub>) + (a <sub>22</sub>*b <sub>23</sub>) + (a <sub>23</sub>*b <sub>33</sub>)</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>(a <sub>31</sub>*b <sub>11</sub>) + (a <sub>32</sub>*b <sub>21</sub>) + (a <sub>33</sub>*b <sub>31</sub>)</td>
+                <td>(a <sub>31</sub>*b <sub>12</sub>) + (a <sub>32</sub>*b <sub>22</sub>) + (a <sub>33</sub>*b <sub>32</sub>)</td>
+                <td>(a <sub>31</sub>*b <sub>13</sub>) + (a <sub>32</sub>*b <sub>23</sub>) + (a <sub>33</sub>*b <sub>33</sub>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For the 3x3 by 3x4 multiplication we will need to use Matrix C, which is below;</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>C</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>3</td>
+        <td>5</td>
+        <td>2</td>
+        <td>9</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>4</td>
+        <td>4</td>
+        <td>7</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>1</td>
+        <td>3</td>
+        <td>9</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>C</td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>c <sub>11</sub></td>
+        <td>c <sub>12</sub></td>
+        <td>c <sub>13</sub></td>
+        <td>c <sub>14</sub></td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>c <sub>21</sub></td>
+        <td>c <sub>22</sub></td>
+        <td>c <sub>23</sub></td>
+        <td>c <sub>24</sub></td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>c <sub>31</sub></td>
+        <td>c <sub>32</sub></td>
+        <td>c <sub>33</sub></td>
+        <td>c <sub>34</sub></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>First, we will work out the formulas to solve the equation, then look at it with the real numbers. The resulting matrix will be 3x3 as Matrix A is size 3(M) x 3(N), and Matrix C is size 3(K) x 4(L). Therefore N must equal K. The resulting Matrix
+    C will have the dimensions M x L.</p>
+
+  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>(A X C)</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>(a <sub>11</sub>*c <sub>11</sub>) + (a <sub>12</sub>*c <sub>21</sub>) + (a <sub>13</sub>*c <sub>31</sub>)</td>
+                <td>(a <sub>11</sub>*c <sub>12</sub>) + (a <sub>12</sub>*c <sub>22</sub>) + (a <sub>13</sub>*c <sub>32</sub>)</td>
+                <td>(a <sub>11</sub>*c <sub>13</sub>) + (a <sub>12</sub>*c <sub>23</sub>) + (a <sub>13</sub>*c <sub>33</sub>)</td>
+                <td>(a <sub>11</sub>*c <sub>14</sub>) + (a <sub>12</sub>*c <sub>24</sub>) + (a <sub>13</sub>*c <sub>34</sub>)</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>(a <sub>21</sub>*c <sub>11</sub>) + (a <sub>22</sub>*c <sub>21</sub>) + (a <sub>23</sub>*c <sub>31</sub>)</td>
+                <td>(a <sub>21</sub>*c <sub>12</sub>) + (a <sub>22</sub>*c <sub>22</sub>) + (a <sub>23</sub>*c <sub>32</sub>)</td>
+                <td>(a <sub>21</sub>*c <sub>13</sub>) + (a <sub>22</sub>*c <sub>23</sub>) + (a <sub>23</sub>*c <sub>33</sub>)</td>
+                <td>(a <sub>21</sub>*c <sub>14</sub>) + (a <sub>22</sub>*c <sub>24</sub>) + (a <sub>23</sub>*c <sub>34</sub>)</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>(a <sub>31</sub>*c <sub>11</sub>) + (a <sub>32</sub>*c <sub>21</sub>) + (a <sub>33</sub>*c <sub>31</sub>)</td>
+                <td>(a <sub>31</sub>*c <sub>12</sub>) + (a <sub>32</sub>*c <sub>22</sub>) + (a <sub>33</sub>*c <sub>32</sub>)</td>
+                <td>(a <sub>31</sub>*c <sub>13</sub>) + (a <sub>32</sub>*c <sub>23</sub>) + (a <sub>33</sub>*c <sub>33</sub>)</td>
+                <td>(a <sub>31</sub>*c <sub>14</sub>) + (a <sub>32</sub>*c <sub>24</sub>) + (a <sub>33</sub>*c <sub>34</sub>)</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>With the real numbers in this looks like;</p>
+
+  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>(A X C)</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>(3*3) + (1*4) + (9*1)</td>
+                <td>(3*5) + (1*4) + (9*3)</td>
+                <td>(3*2) + (1*7) + (9*9)</td>
+                <td>(3*9) + (1*2) + (9*1)</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>(2*3) + (0*4) + (0*1)</td>
+                <td>(2*5) + (0*4) + (0*3)</td>
+                <td>(2*2) + (0*7) + (0*9)</td>
+                <td>(2*9) + (0*2) + (0*1)</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>(1*3) + (2*4) + (4*1)</td>
+                <td>(1*5) + (2*4) + (4*3)</td>
+                <td>(1*2) + (2*7) + (4*9)</td>
+                <td>(1*9) + (2*2) + (4*1)</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Which once worked out comes to;</p>
+
+  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
+    <tbody>
+      <tr>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>(A X C)</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>22</td>
+                <td>46</td>
+                <td>104</td>
+                <td>38</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>6</td>
+                <td>15</td>
+                <td>4</td>
+                <td>18</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>15</td>
+                <td>25</td>
+                <td>44</td>
+                <td>17</td>
+              </tr>
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+
+  <hr>
+  <a href="index.html"><h5>Home</h5> </a>
+  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+</body>
+
+</html>
