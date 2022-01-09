@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Inverse Matrices</title>
+  <style>
+    body {
+      background-color: #92A9BD;
+    }
+
+
+    hr {
+      border-color: #D3DEDC;
+      border-style: dotted none none;
+      width: 5%;
+      height: 0;
+      border-width: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2>Inverse Matrices</h2>
+
+  <p>If A<sub>n x n</sub> is a <em>square</em> matrix and there is A x A<sup>-1</sup> = A<sup>-1</sup> x A = 1 then A<sup>-1</sup> is the inverse of A.</p>
+  <p>If |A| = 0, A does NOT have an inverse OR if |A| ≠ 0, A does have an inverse.</p>
+
+  <h5>Method</h5>
+
+  <ol>
+    <li>Transpose Matrix A to get A<sup>T</sup>.</li>
+    <li>Replace each element of A<sup>T</sup> by its cofactor:
+      adj(A) - adjoint matrix</li>
+    <li>Divide by the determinate of A:</li>
+
+    A<<sup>-1</sup> = adj(A) / |A|
+
+  </ol>
+
+  <p>For 2x2 matrices <em>only</em>:</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>A =</td>
+        <td>2</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>3</td>
+        <td>7</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>then;</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>  A<sup>-1</sup> = (1/ad-cb) X </td>
+        <td>d</td>
+        <td>-b</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>-c</td>
+        <td>a</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+  <a href="index.html">
+    <h5>Home</h5>
+  </a>
+  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+</body>
+
+</html>
