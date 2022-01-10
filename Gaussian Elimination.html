@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Guassian Elimination</title>
+  <style>
+    body {
+      background-color: #92A9BD;
+    }
+
+
+    hr {
+      border-color: #D3DEDC;
+      border-style: dotted none none;
+      width: 5%;
+      height: 0;
+      border-width: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2>Gaussian Elimination</h2>
+  <p>The fundamental idea is to add multiples of one equation to the others in order to eliminate a variable and to continue this
+    process, until only one variable is left. Once this final variable is determined, its value is substituted back into the other
+    equations in order to evaluate the remaining unknowns. Therefore, this method is characterized by step-by-step
+    elimination of the variables. </p>
+
+  <p>For systems of simultaneous equations;</p>
+
+  <img src="Images/Cramer2.png" alt="Matrix Image"><br>
+
+  The <em>Augmented Matrix</em> is;<br>
+
+  <img src="Images/Gauss1.png" alt="Matrix Image"><br>
+
+  <p>Where the coefficient matrix is augmented by writing the constants that appear on the right hand side of the equations as an additional column. </p>
+
+  <p>We can perform any of the following elementary row operations:</p>
+  <ol>
+    <li>Interchange any two rows.</li>
+    <li>Multiply a row by a nonzero constant.</li>
+    <li>Add (or subtract) a multiple of one row to another row.</li>
+  </ol>
+
+  <p>The goal of these operations is to transform the original augmented matrix into a matrix where any zero rows appear at the bottom of the matrix and the first
+    nonzero entry in any row is to the right of the first nonzero entry in any higher row. This is said to be the echelon matrix.</p>
+
+  <p>
+    An example of Gaussian Elimination;
+  </p>
+
+ 9<td>x<sub>1</sub></td> + 3<td>x<sub>2</sub></td> + 4<td>x<sub>3</sub></td> = 7 <br>
+ 4<td>x<sub>1</sub></td> + 3<td>x<sub>2</sub></td> + 4<td>x<sub>3</sub></td> = 8 <br>
+ 1<td>x<sub>1</sub></td> + 1<td>x<sub>2</sub></td> + 1<td>x<sub>3</sub></td> = 3 <br>
+
+<br>
+<br>
+
+<table>
+  <tbody>
+    <tr>
+      <td>9</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+      <td></td>
+      <td></td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+      <td></td>
+      <td>=</td>
+      <td>8</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+      <td></td>
+      <td></td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>In augmented form, this becomes;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>9</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>7</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>8</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>3</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Switching the first and third rows (without switching the elementsin the right hand column vector) gives;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>3</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>8</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+    </tr>
+    <tr>
+      <td>9</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>7</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Subtracting the first row from the third row 9 times gives;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>3</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td>4</td>
+      <td></td>
+      <td>8</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>-6</td>
+      <td>-5</td>
+      <td></td>
+      <td>-20</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Subtracting the first row from the second 4 times gives;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>3</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>-1</td>
+      <td>0</td>
+      <td></td>
+      <td>-4</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>-6</td>
+      <td>-5</td>
+      <td></td>
+      <td>-20</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Finally, subtracting the second row from the third 6 times gives;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>3</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>-1</td>
+      <td>0</td>
+      <td></td>
+      <td>-4</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>-5</td>
+      <td></td>
+      <td>4</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Restoring the transformed matrix equation gives;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>1</td>
+      <td>1</td>
+      <td></td>
+      <td>x<sub>1</sub></td>
+      <td></td>
+      <td></td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>-1</td>
+      <td>0</td>
+      <td></td>
+      <td>x<sub>2</sub></td>
+      <td></td>
+      <td>=</td>
+      <td>-4</td>
+    </tr>
+    <tr>
+      <td>0</td>
+      <td>0</td>
+      <td>-5</td>
+      <td></td>
+      <td>x<sub>3</sub></td>
+      <td></td>
+      <td></td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Taking this final transformed matrix we can solve for the x values. x<sub>3</sub> can be solved easily to be -4/5. Substituting back into the original equation we can find x<sub>2</sub> = 4 and x<sub>1</sub> = -1/5 </p>
+
+
+
+
+
+
+
+  <hr>
+  <a href="index.html">
+    <h5>Home</h5>
+  </a>
+  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+</body>
+
+</html>

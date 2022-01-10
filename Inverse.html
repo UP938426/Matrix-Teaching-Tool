@@ -32,9 +32,9 @@
     <li>Transpose Matrix A to get A<sup>T</sup>.</li>
     <li>Replace each element of A<sup>T</sup> by its cofactor:
       adj(A) - adjoint matrix</li>
-    <li>Divide by the determinate of A:</li>
+    <li>Divide by the determinant of A:</li>
 
-    A<<sup>-1</sup> = adj(A) / |A|
+    A<sup>-1</sup> = adj(A) / |A|
 
   </ol>
 
@@ -71,6 +71,11 @@
       </tr>
     </tbody>
   </table>
+
+  <p>Why do we need to know how to do the inverse of matrices?</p>
+
+  <p>As you can divide matrices you need to have a different way to achieve a similar effect.  For example we have XA = B, we want to find matrix X and we know A and B.
+  If we multiply both sides by A<sup>-1</sup> we get XAA<sup>-1</sup> = BA<sup>-1</sup>.  As AA<sup>-1</sup> = 1 we are left with X = BA<sup>-1</sup>, allowing us to then find X.</p>
 
   <hr>
   <a href="index.html">

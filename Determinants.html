@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background-color: #92A9BD;
+    }
+
+    <title>Determinants</title>hr {
+      border-color: #D3DEDC;
+      border-style: dotted none none;
+      width: 5%;
+      height: 0;
+      border-width: 5px;
+    }
+    mark.red {
+        color: "red";
+      }
+    mark.blue {
+        color: "blue";
+      }
+  </style>
+</head>
+
+<body>
+  <h2>Determinates</h2>
+
+  <p>In this section we will look at the determinants for 2x2 and 3x3 matrices. Every square matrix has a special quantity associated with it, called its determinant. The determinate is important
+    because it gives us another way to solve a set of equations.</p>
+  <p>The symbols of the determinant can be det(A) or |A|.</p>
+
+  <h4>2x2</h4>
+
+  <p>Second-order Determinant: the value is equal to the product of the elements on the main diagonal minus the product of the
+    elements on the secondary diagonal</p>
+
+
+
+  <table>
+    <tbody>
+      <tr>
+        <td>det(A) = |A| =</td>
+        <td>a</td>
+        <td>b</td>
+        <td>= ab-cd</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>c</td>
+        <td>d</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <h4>3x3</h4>
+  <p>Third-order Determinant: the value is determined using a method of developing the minors of an element of the matrix. The minor of an element in a determinant is a determinant of
+    lower order, obtained by deleting the row and the column in which that element lies.</p>
+
+  <table cellspacing="20">
+    <tr>
+      <td> <img src="Images/3x3 determ.png" alt="Matrix Image"></td>
+      <td>
+        <p>The Minor of a<sub>21</sub> is;</p>
+        <p>
+        <table>
+          <tbody>
+            <tr>
+              <td>a<sub>12</sub></td>
+              <td>a<sub>13</sub></td>
+            </tr>
+            <tr>
+              <td>a<sub>32</sub></td>
+              <td>a<sub>33</sub></td>
+            </tr>
+
+          </tbody>
+        </table>
+        </p>
+
+      </td>
+    </tr>
+  </table>
+
+  <p>The sign factor of an element depends on the position of the element in the determinant. To find the sign factor, add the
+    row number and the column number of the element. If the sum is even, the sign factor is +1; if the sum is odd, the sign factor is -1.</p>
+
+  <img src="Images/determ2.png" alt="Matrix Image">
+
+  <p>Cofactor of an element is the minor of the element attached with the sign factor, e.g. the cofactor of a<<sub>21</sub> is;</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>(-1)<sup>2+1</sup></td>
+        <td>|a<sub>12</sub></td>
+        <td>a<sub>13</sub>|</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>|a<sub>32</sub></td>
+        <td>a<sub>33</sub>|</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p>So, the determinant of a 𝟑 × 𝟑 matrix is defined as follows:</p>
+
+  <ol>
+    <li>Choose any row or any column to develop by minors.</li>
+    <li>Write the product of every element in that row or column and its signed factor, i.e. write its cofactor.</li>
+    <li>Add these products (cofactors) to get the value of the determinant.</li>
+  </ol>
+
+  <img src="Images/determ3.png" alt="Matrix Image">
+
+  <p>To solve to blue box you would use the following calculation;</p>
+
+
+  <table>
+    <tbody>
+      <tr>
+        <td>|A| = </td>
+        <td>+a<sub>11</sub> X</td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>|a<sub>12</sub></td>
+                <td>a<sub>13</sub>|</td>
+              </tr>
+              <tr>
+                <td>|a<sub>32</sub></td>
+                <td>a<sub>33</sub>|</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+        <td>- a<sub>12</sub></td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>|a<sub>21</sub></td>
+                <td>a<sub>23</sub>|</td>
+              </tr>
+              <tr>
+                <td>|a<sub>31</sub></td>
+                <td>a<sub>33</sub>|</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+        <td>+ a<sub>13</sub></td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>|a<sub>21</sub></td>
+                <td>a<sub>22</sub>|</td>
+              </tr>
+              <tr>
+                <td>|a<sub>31</sub></td>
+                <td>a<sub>32</sub>|</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>Or with the Green box;</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>|A| = </td>
+        <td>-a<sub>12</sub> X</td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>|a<sub>21</sub></td>
+                <td>a<sub>23</sub>|</td>
+              </tr>
+              <tr>
+                <td>|a<sub>31</sub></td>
+                <td>a<sub>33</sub>|</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+        <td>+ a<sub>22</sub></td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>|a<sub>11</sub></td>
+                <td>a<sub>13</sub>|</td>
+              </tr>
+              <tr>
+                <td>|a<sub>31</sub></td>
+                <td>a<sub>33</sub>|</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+        <td>- a<sub>32</sub></td>
+        <td>
+          <table>
+            <tbody>
+              <tr>
+                <td>|a<sub>11</sub></td>
+                <td>a<sub>13</sub>|</td>
+              </tr>
+              <tr>
+                <td>|a<sub>21</sub></td>
+                <td>a<sub>23</sub>|</td>
+              </tr>
+
+            </tbody>
+          </table>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For 3x3 matricesonly;</p>
+
+  <img src="Images/determ4.png" alt="Matrix Image">
+
+  <p>|A| = <font color="blue">a<sub>11</sub>a<sub>22</sub>a<sub>33</sub> + a<sub>12</sub>a<sub>23</sub>a<sub>31</sub> + a<sub>13</sub>a<sub>21</sub>a<sub>32</sub></font>
+
+  <font color="red">- a<sub>31</sub>a<sub>22</sub>a<sub>13</sub> - a<sub>32</sub>a<sub>23</sub>a<sub>11</sub> - a<sub>33</sub>a<sub>21</sub>a<sub>12</sub></font>
+
+  <p>Properties of Determinates</p>
+  <ol>
+    <li>|𝑘𝐴| = 𝑘<sup>𝑛</sup>|𝐴|, where 𝑛 is 𝐴’s size.</li>
+    <li>If 𝐵 is obtained from 𝐴 by interchanging two rows or columns, then: |B| = -A</li>
+    <li>Adding or subtracting a multiple of one row (or column) to another row (or column) leaves the determinant unchanged.</li>
+    <li>|AB| = |A||B|, if both 𝐴 and 𝐵 are 𝑛 × 𝑛 matrices.</li>
+    <li>If two rows or two columns of a matrix are equal, the determinant of the matrix is zero.</li>
+  </ol>
+
+
+
+
+
+
+
+
+
+
+
+
+  <hr>
+  <a href="index.html">
+    <h5>Home</h5>
+  </a>
+  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+</body>
+
+</html>
