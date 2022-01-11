@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Inverse Matrices</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body {
       background-color: #92A9BD;
@@ -28,6 +30,8 @@
 
   <h5>Method</h5>
 
+
+
   <ol>
     <li>Transpose Matrix A to get A<sup>T</sup>.</li>
     <li>Replace each element of A<sup>T</sup> by its cofactor:
@@ -40,37 +44,53 @@
 
   <p>For 2x2 matrices <em>only</em>:</p>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>A =</td>
-        <td>2</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>3</td>
-        <td>7</td>
-      </tr>
-    </tbody>
-  </table>
+    <center>
+      A
+    </center>
+
+  <p>\begin{bmatrix} 2 & 4\\ 3 & 7\end{bmatrix}</p>
+
+
 
   <p>then;</p>
+ <center>
+  <table>
+    <tbody>
+      <tr>
+        <td>A<sup>-1</sup>=</td>
+        <td>(1/ad-cb) x </td>
+        <td>\begin{bmatrix} d & -b\\ -c & a\end{bmatrix}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
 
   <table>
     <tbody>
       <tr>
-        <td>  A<sup>-1</sup> = (1/ad-cb) X </td>
-        <td>d</td>
-        <td>-b</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>-c</td>
-        <td>a</td>
+        <td>A<sup>-1</sup>=</td>
+        <td>(1/2)</td>
+        <td>\begin{bmatrix} 7 & -4\\ -3 & 2\end{bmatrix}</td>
       </tr>
     </tbody>
   </table>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>A<sup>-1</sup>=</td>
+        <td>\begin{bmatrix} 7/2 & -2\\ -3/2 & 1\end{bmatrix}</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+
+<p></p>
+</center>
+
 
   <p>Why do we need to know how to do the inverse of matrices?</p>
 

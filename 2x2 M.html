@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/styles.css">
   <title>2x2 Matrix Multilpication</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -13,74 +15,27 @@
     matrix has the same dimensions as the initial matrix.</p><br>
   <p>We will use Matrices A and B as examples.</p><br>
 
-  A
-  <table>
-    <tbody>
+  <center>
+    A
+  </center>
+
+  <p>\begin{bmatrix} 2 & 4 \\ 3 & 7\end{bmatrix}</p><br>
+
+  <center>
+    B
+  </center>
+
+  <p>\begin{bmatrix} 1 & 5 \\ 0 & 7\end{bmatrix}</p><br>
+
+  <center>
+    Two time A (2A) would give us.
+  </center>
+  <p>\begin{bmatrix} 2x2 & 4x2 \\ 3x2 & 7x2\end{bmatrix}</p><br>
+
+<p>Giving us the result</p>
+  <p>\begin{bmatrix} 4 & 8 \\ 6 & 14\end{bmatrix}</p><br>
 
 
-        <table>
-            <tbody>
-              <tr>
-                <td>2</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>7</td>
-              </tr>
-            </tbody>
-          </table>
-
-B
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>5</td>
-              </tr>
-              <tr>
-                <td>0</td>
-                <td>7</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-
-    </tbody>
-  </table><br>
-
-  <p>For Multilpication by a scalar (for example 2) we would use the following maths. We will use Matrix A for this demo</p>
-
-
-
-  2A =
-  <table>
-    <tbody>
-      <tr>
-        <td>2x2</td>
-        <td>4x2</td>
-      </tr>
-      <tr>
-        <td>3x2</td>
-        <td>7x2</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <p>Giving us the result</p>
-  <table>
-    <tbody>
-      <tr>
-        <td>4</td>
-        <td>8</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>14</td>
-      </tr>
-    </tbody>
-  </table>
 
   <p>Multiplication becomes slightly more complicated when a matrix is multiplied by another matrix. We will now look into the required method in a 2x2 senerio, but the same techniques ring true with 3x3, 3x4, 4x3 etc as well.
     For the product AB to exist, the numer of columns of A must equal the number of rows of B.</p>
@@ -88,87 +43,23 @@ B
   <p> Matrix A is size M x N, and matrix B is size K x L. Therefore N must equal K. The resulting Matrix C will have the dimensions M x L.
     Below is an example of the rule.</p>
 
-  <table  style=  "padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>A</td>
-                <td>1</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>a <sub>11</sub></td>
-                <td>a <sub>12</sub></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>a <sub>21</sub></td>
-                <td>a <sub>22</sub></td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
+    <center>
+      A
+    </center>
 
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>B</td>
-                <td>1</td>
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>b <sub>11</sub></td>
-                <td>b <sub>12</sub></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>b <sub>21</sub></td>
-                <td>b <sub>22</sub></td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <p>\begin{bmatrix} a_{11} & a_{12} \\  a_{21} & a_{22} \end{bmatrix}</p><br>
 
+    <center>
+      B
+    </center>
 
-  <table  style=  "padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>(A X B)</td>
-                <td>1</td>
+    <p>\begin{bmatrix} b_{11} & b_{12}\\ b_{21} & b_{22}\end{bmatrix}</p><br>
 
-                <td>2</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>(a <sub>11</sub>*b <sub>11</sub>) + (a <sub>12</sub>*b <sub>21</sub>)</td>
+    <center>
+    A x B
+    </center>
 
-                <td>(a <sub>11</sub>*b <sub>12</sub>) + (a <sub>12</sub>*b <sub>22</sub>)</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>(a <sub>21</sub>*b <sub>11</sub>) + (a <sub>22</sub>*b <sub>21</sub>)</td>
-
-                <td>(a <sub>21</sub>*b <sub>12</sub>) + (a <sub>22</sub>*b <sub>22</sub>)</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-        </tbody>
-          </table>
+    <p>\begin{bmatrix} a_{11}b_{11} + a_{12}b_{21} & a_{11}b_{12} + a_{12}b_{22}\\ a_{21}b_{11} + a_{22}b_{12} & a_{21}b_{12} + a_{22}b_{22}\end{bmatrix}</p><br>
 
 
 

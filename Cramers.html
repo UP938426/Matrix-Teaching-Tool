@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Cramer's Rule</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body {
       background-color: #92A9BD;
@@ -52,38 +54,30 @@
   <table>
     <tbody>
       <tr>
-        <td>det(A) = |A| =</td>
-        <td>a</td>
-        <td>b</td>
-        <td>= ab-cd</td>
+        <td>det(A)=</td>
+        <td>|A| =</td>
+        <td>\begin{bmatrix} a & b\\ c & d\end{bmatrix}</td>
+        <td>= ad-cb</td>
       </tr>
-      <tr>
-        <td></td>
-        <td>c</td>
-        <td>d</td>
-      </tr>
-
     </tbody>
   </table>
+
+
 
   <p>Or;</p>
 
   <table>
     <tbody>
       <tr>
-        <td>det(A) = |A| =</td>
-        <td>a<sub>11</sub></td>
-        <td>a<sub>12</sub< /td>
-        <td>= a<sub>11</sub>a<sub>22</sub> - a<sub>21</sub>a<sub>12</sub< /td>
+        <td>det(A)=</td>
+        <td>|A| =</td>
+        <td>\begin{bmatrix} a_{11} & a_{12} \\  a_{21} & a_{22}\end{bmatrix}</td>
+        <td>= = a<sub>11</sub>a<sub>22</sub> - a<sub>21</sub>a<sub>12</sub></td>
       </tr>
-      <tr>
-        <td></td>
-        <td>a<sub>21</sub< /td>
-        <td>a<sub>22</sub< /td>
-      </tr>
-
     </tbody>
   </table>
+
+
 
   <p>So, we notice that the denominators are identical to this determinant. This is the determinant of the coefficients or the determinant of the system.</p>
   <p>If this determinant is zero, then the set of equations has <em>no unique solution</em>.</p>
@@ -94,35 +88,19 @@
 
   <p>These can be written as;</p>
 
-  X<sub>1</sub>
-  <table>
-    <tbody>
-      <tr>
-        <td>k<sub>1</sub></td>
-        <td>a<sub>12</sub< /td>
-      </tr>
-      <tr>
-        <td>k<sub>2</sub< /td>
-        <td>a<sub>22</sub< /td>
-      </tr>
+  <center>
+    X<sub>1</sub>
+  </center>
 
-    </tbody>
-  </table><br>
+  <p>\begin{bmatrix} k_{1} & a_{12} \\  k_{2} & a_{22} \end{bmatrix}</p><br>
 
-  X<sub>2</sub>
-  <table>
-    <tbody>
-      <tr>
-        <td>a<sub>11</sub></td>
-        <td>k<sub>1</sub< /td>
-      </tr>
-      <tr>
-        <td>a<sub>21</sub< /td>
-        <td>k<sub>2</sub< /td>
-      </tr>
+  <center>
+    X<sub>2</sub>
+  </center>
 
-    </tbody>
-  </table>
+  <p>\begin{bmatrix} a_{11} & k_{1}\\ a_{21} & k_{2}\end{bmatrix}</p><br>
+
+
 
   <p>Taking the two matrices for X<sub>1</sub> and X<sub>2</sub> we can solve with the following equation using Cramer's rule for 2x2 systems;</p>
 

@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Guassian Elimination</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body {
       background-color: #92A9BD;
@@ -52,256 +54,55 @@
     An example of Gaussian Elimination;
   </p>
 
- 9<td>x<sub>1</sub></td> + 3<td>x<sub>2</sub></td> + 4<td>x<sub>3</sub></td> = 7 <br>
- 4<td>x<sub>1</sub></td> + 3<td>x<sub>2</sub></td> + 4<td>x<sub>3</sub></td> = 8 <br>
- 1<td>x<sub>1</sub></td> + 1<td>x<sub>2</sub></td> + 1<td>x<sub>3</sub></td> = 3 <br>
 
-<br>
-<br>
+  9<td>x<sub>1</sub></td> + 3<td>x<sub>2</sub></td> + 4<td>x<sub>3</sub></td> = 7 <br>
+  4<td>x<sub>1</sub></td> + 3<td>x<sub>2</sub></td> + 4<td>x<sub>3</sub></td> = 8 <br>
+  1<td>x<sub>1</sub></td> + 1<td>x<sub>2</sub></td> + 1<td>x<sub>3</sub></td> = 3 <br>
 
-<table>
-  <tbody>
-    <tr>
-      <td>9</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-      <td></td>
-      <td></td>
-      <td>7</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-      <td></td>
-      <td>=</td>
-      <td>8</td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-      <td></td>
-      <td></td>
-      <td>3</td>
-    </tr>
-  </tbody>
-</table>
+  <br>
+  <br>
+  \[\begin{bmatrix} 9 & 3 & 4 \\ 4 & 3 & 4\\1 & 1 & 1\end{bmatrix}\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}=\begin{bmatrix}7 \\ 8 \\ 3\end{bmatrix}\]
 
-<p>In augmented form, this becomes;</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>9</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>7</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>8</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-    </tr>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>3</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-    </tr>
-  </tbody>
-</table>
+  <p>In augmented form, this becomes;</p>
 
-<p>Switching the first and third rows (without switching the elements in the right hand column vector) gives;</p>
+  \[\left[\begin{array}{ccc|c} 9 & 3 & 4 & 7 \\ 4 & 3 & 4 & 8\\1 & 1 & 1 & 3\end{array}\right]\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>3</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>8</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>7</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-    </tr>
-  </tbody>
-</table>
 
-<p>Subtracting the first row from the third row 9 times gives;</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>3</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>3</td>
-      <td>4</td>
-      <td></td>
-      <td>8</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>-6</td>
-      <td>-5</td>
-      <td></td>
-      <td>-20</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-    </tr>
-  </tbody>
-</table>
 
-<p>Subtracting the first row from the second 4 times gives;</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>3</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>-1</td>
-      <td>0</td>
-      <td></td>
-      <td>-4</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>-6</td>
-      <td>-5</td>
-      <td></td>
-      <td>-20</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-    </tr>
-  </tbody>
-</table>
+  <p>Switching the first and third rows (without switching the elementsin the right hand column vector) gives;</p>
 
-<p>Finally, subtracting the second row from the third 6 times gives;</p>
+  \[\left[\begin{array}{ccc|c} 1 & 1 & 1 & 3 \\ 4 & 3 & 4 & 8\\9 & 3 & 4 & 7\end{array}\right]\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}\]
 
-<table>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>3</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>-1</td>
-      <td>0</td>
-      <td></td>
-      <td>-4</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>-5</td>
-      <td></td>
-      <td>4</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-    </tr>
-  </tbody>
-</table>
 
-<p>Restoring the transformed matrix equation gives;</p>
 
-<table>
-  <tbody>
-    <tr>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td></td>
-      <td>x<sub>1</sub></td>
-      <td></td>
-      <td></td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>-1</td>
-      <td>0</td>
-      <td></td>
-      <td>x<sub>2</sub></td>
-      <td></td>
-      <td>=</td>
-      <td>-4</td>
-    </tr>
-    <tr>
-      <td>0</td>
-      <td>0</td>
-      <td>-5</td>
-      <td></td>
-      <td>x<sub>3</sub></td>
-      <td></td>
-      <td></td>
-      <td>4</td>
-    </tr>
-  </tbody>
-</table>
+  <p>Subtracting the first row from the third row 9 times gives;</p>
 
-<p>Taking this final transformed matrix we can solve for the x values. x<sub>3</sub> can be solved easily to be -4/5. Substituting back into the original equation we can find x<sub>2</sub> = 4 and x<sub>1</sub> = -1/5 </p>
+  \[\left[\begin{array}{ccc|c} 1 & 1 & 1 & 3 \\ 4 & 3 & 4 & 8\\0 & -6 & -5 & -20\end{array}\right]\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}\]
+
+
+
+  <p>Subtracting the first row from the second 4 times gives;</p>
+
+  \[\left[\begin{array}{ccc|c} 1 & 1 & 1 & 3 \\ 0 & -1 & 0 & -4\\0 & -6 & -5 & -20\end{array}\right]\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}\]
+
+
+
+  <p>Finally, subtracting the second row from the third 6 times gives;</p>
+
+  \[\left[\begin{array}{ccc|c} 1 & 1 & 1 & 3 \\ 0 & -1 & 0 & -4\\0 & 0 & -5 & 4\end{array}\right]\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}\]
+
+
+
+  <p>Restoring the transformed matrix equation gives;</p>
+
+  \[\begin{bmatrix} 1 & 1 & 1 \\ 0 & -1 & 0\\0 & 0 & -5\end{bmatrix}\begin{bmatrix}x_{1} \\ x_{2} \\ x_{3}\end{bmatrix}=\begin{bmatrix}3 \\ -4 \\ 4\end{bmatrix}\]
+
+
+
+  <p>Taking this final transformed matrix we can solve for the x values. x<sub>3</sub> can be solved easily to be -4/5. Substituting back into the original equation we can find x<sub>2</sub> = 4 and x<sub>1</sub> = -1/5 </p>
 
 
 

@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <link rel="stylesheet" href="css/styles.css">
   <title>3x3 Matrix Multilpication</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 
 <body>
@@ -12,417 +14,91 @@
   <p>We have covered the basics of multilpication in the 2x2 serial, and will be using the same method here. We will cover 3x3 multiplied by a 3x3 and a 3x3 multiplied a 3x4 to make sure the solution is clear.</p><br>
   <p>We will use the same Matrices A and B as the last 3x3 topic.</p><br>
 
-  A &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; B
-  <table>
-    <tbody>
-      <tr>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>3</td>
-                <td>1</td>
-                <td>9</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>0</td>
-                <td>0</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>4</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
+  <center>
+    A
+  </center>
 
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>5</td>
-                <td>7</td>
-                <td>1</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>2</td>
-                <td>9</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>1</td>
-                <td>2</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table><br>
+  <p>\begin{bmatrix} 3 & 1 & 9 \\ 2 & 0 & 0\\1 & 2 & 4\end{bmatrix}</p><br>
+
+  <center>
+    B
+  </center>
+
+  <p>\begin{bmatrix} 5 & 7 & 1 \\ 3 & 2 & 9\\1 & 1 & 2\end{bmatrix}</p><br>
+
+
 
   <p>For Multilpication by a scalar it is the same as a 2x2, but we will cover it again quickly to confirm the learning. Lets use A again and multiply it by 3. We would use the following maths.</p>
 
 
-  3A =
-  <table>
-    <tbody>
-      <tr>
-        <td>3x3</td>
-        <td>1x3</td>
-        <td>9x3</td>
-      </tr>
-      <tr>
-        <td>2x3</td>
-        <td>0x3</td>
-        <td>0x3</td>
-      </tr>
-      <tr>
-        <td>1x3</td>
-        <td>2x3</td>
-        <td>4x3</td>
-      </tr>
-    </tbody>
-  </table>
+  <center>
+    3A
+  </center>
+
+  <p>\begin{bmatrix} 3x3 & 1x3 & 9x3 \\ 2x3 & 0x3 & 0x3\\1x3 & 2x3 & 4x3\end{bmatrix}</p><br>
 
   <p>Giving us the result</p>
-  <table>
-    <tbody>
-      <tr>
-        <td>9</td>
-        <td>3</td>
-        <td>27</td>
-      </tr>
-      <tr>
-        <td>6</td>
-        <td>0</td>
-        <td>0</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>6</td>
-        <td>12</td>
-      </tr>
-    </tbody>
-  </table>
+
+  <p>\begin{bmatrix} 9 & 3 & 27 \\ 6 & 0 & 0\\3 & 6 & 12\end{bmatrix}</p><br>
 
   <p>Using the same method shown in the 2x2 section, we will need cover A x B.
     For the product AB to exist, the numer of columns of A must equal the number of rows of B.</p>
 
   <p> As both A and B are 3x3 the resulting matrix, will also be 3x3.</p>
 
-  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>A</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>a <sub>11</sub></td>
-                <td>a <sub>12</sub></td>
-                <td>a <sub>13</sub></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>a <sub>21</sub></td>
-                <td>a <sub>22</sub></td>
-                <td>a <sub>23</sub></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>a <sub>31</sub></td>
-                <td>a <sub>32</sub></td>
-                <td>a <sub>33</sub></td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
+  <center>
+    A
+  </center>
 
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>B</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>b <sub>11</sub></td>
-                <td>b <sub>12</sub></td>
-                <td>b <sub>13</sub></td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>b <sub>21</sub></td>
-                <td>b <sub>22</sub></td>
-                <td>b <sub>23</sub></td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>b <sub>31</sub></td>
-                <td>b <sub>32</sub></td>
-                <td>b <sub>33</sub></td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <p>\begin{bmatrix} a_{11} & a_{12} & a_{13} \\  a_{21} & a_{22} & a_{23}\\ a_{31} & a_{32} & a_{33}  \end{bmatrix}</p><br>
+
+  <center>
+    B
+  </center>
+
+  <p>\begin{bmatrix} b_{11} & b_{12} & b_{13}\\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33}\end{bmatrix}</p><br>
+
+  <p>\begin{bmatrix} (a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31}) & (a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32}) & (a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33}) \\ (a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31}) & (a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32}) & (a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33})
+     \\(a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31}) & (a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32}) & (a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33})\end{bmatrix}</p><br>
 
 
-  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>(A X B)</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>(a <sub>11</sub>*b <sub>11</sub>) + (a <sub>12</sub>*b <sub>21</sub>) + (a <sub>13</sub>*b <sub>31</sub>)</td>
-                <td>(a <sub>11</sub>*b <sub>12</sub>) + (a <sub>12</sub>*b <sub>22</sub>) + (a <sub>13</sub>*b <sub>32</sub>)</td>
-                <td>(a <sub>11</sub>*b <sub>13</sub>) + (a <sub>12</sub>*b <sub>23</sub>) + (a <sub>13</sub>*b <sub>33</sub>)</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>(a <sub>21</sub>*b <sub>11</sub>) + (a <sub>22</sub>*b <sub>21</sub>) + (a <sub>23</sub>*b <sub>31</sub>)</td>
-                <td>(a <sub>21</sub>*b <sub>12</sub>) + (a <sub>22</sub>*b <sub>22</sub>) + (a <sub>23</sub>*b <sub>32</sub>)</td>
-                <td>(a <sub>21</sub>*b <sub>13</sub>) + (a <sub>22</sub>*b <sub>23</sub>) + (a <sub>23</sub>*b <sub>33</sub>)</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>(a <sub>31</sub>*b <sub>11</sub>) + (a <sub>32</sub>*b <sub>21</sub>) + (a <sub>33</sub>*b <sub>31</sub>)</td>
-                <td>(a <sub>31</sub>*b <sub>12</sub>) + (a <sub>32</sub>*b <sub>22</sub>) + (a <sub>33</sub>*b <sub>32</sub>)</td>
-                <td>(a <sub>31</sub>*b <sub>13</sub>) + (a <sub>32</sub>*b <sub>23</sub>) + (a <sub>33</sub>*b <sub>33</sub>)</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
 
   <p>For the 3x3 by 3x4 multiplication we will need to use Matrix C, which is below;</p>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>C</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>3</td>
-        <td>5</td>
-        <td>2</td>
-        <td>9</td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>4</td>
-        <td>4</td>
-        <td>7</td>
-        <td>2</td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>1</td>
-        <td>3</td>
-        <td>9</td>
-        <td>1</td>
-      </tr>
-    </tbody>
-  </table>
+  <center>
+    C
+  </center>
+  <p>\begin{bmatrix} 3 & 5 & 2 & 9 \\ 4 & 4 & 7 & 2\\1 & 3 & 9 & 1\end{bmatrix}</p><br>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>C</td>
-        <td>1</td>
-        <td>2</td>
-        <td>3</td>
-        <td>4</td>
-      </tr>
-      <tr>
-        <td>1</td>
-        <td>c <sub>11</sub></td>
-        <td>c <sub>12</sub></td>
-        <td>c <sub>13</sub></td>
-        <td>c <sub>14</sub></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>c <sub>21</sub></td>
-        <td>c <sub>22</sub></td>
-        <td>c <sub>23</sub></td>
-        <td>c <sub>24</sub></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>c <sub>31</sub></td>
-        <td>c <sub>32</sub></td>
-        <td>c <sub>33</sub></td>
-        <td>c <sub>34</sub></td>
-      </tr>
-    </tbody>
-  </table>
+  <p>\begin{bmatrix} c_{11} & c_{12} & c_{13} & c_{14} \\ c_{21} & c_{22} & c_{23} & c_{24} \\ c_{31} & c_{32} & c_{33} & c_{34} \end{bmatrix}</p><br>
+
+
 
   <p>First, we will work out the formulas to solve the equation, then look at it with the real numbers. The resulting matrix will be 3x3 as Matrix A is size 3(M) x 3(N), and Matrix C is size 3(K) x 4(L). Therefore N must equal K. The resulting Matrix
     C will have the dimensions M x L.</p>
 
-  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>(A X C)</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>(a <sub>11</sub>*c <sub>11</sub>) + (a <sub>12</sub>*c <sub>21</sub>) + (a <sub>13</sub>*c <sub>31</sub>)</td>
-                <td>(a <sub>11</sub>*c <sub>12</sub>) + (a <sub>12</sub>*c <sub>22</sub>) + (a <sub>13</sub>*c <sub>32</sub>)</td>
-                <td>(a <sub>11</sub>*c <sub>13</sub>) + (a <sub>12</sub>*c <sub>23</sub>) + (a <sub>13</sub>*c <sub>33</sub>)</td>
-                <td>(a <sub>11</sub>*c <sub>14</sub>) + (a <sub>12</sub>*c <sub>24</sub>) + (a <sub>13</sub>*c <sub>34</sub>)</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>(a <sub>21</sub>*c <sub>11</sub>) + (a <sub>22</sub>*c <sub>21</sub>) + (a <sub>23</sub>*c <sub>31</sub>)</td>
-                <td>(a <sub>21</sub>*c <sub>12</sub>) + (a <sub>22</sub>*c <sub>22</sub>) + (a <sub>23</sub>*c <sub>32</sub>)</td>
-                <td>(a <sub>21</sub>*c <sub>13</sub>) + (a <sub>22</sub>*c <sub>23</sub>) + (a <sub>23</sub>*c <sub>33</sub>)</td>
-                <td>(a <sub>21</sub>*c <sub>14</sub>) + (a <sub>22</sub>*c <sub>24</sub>) + (a <sub>23</sub>*c <sub>34</sub>)</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>(a <sub>31</sub>*c <sub>11</sub>) + (a <sub>32</sub>*c <sub>21</sub>) + (a <sub>33</sub>*c <sub>31</sub>)</td>
-                <td>(a <sub>31</sub>*c <sub>12</sub>) + (a <sub>32</sub>*c <sub>22</sub>) + (a <sub>33</sub>*c <sub>32</sub>)</td>
-                <td>(a <sub>31</sub>*c <sub>13</sub>) + (a <sub>32</sub>*c <sub>23</sub>) + (a <sub>33</sub>*c <sub>33</sub>)</td>
-                <td>(a <sub>31</sub>*c <sub>14</sub>) + (a <sub>32</sub>*c <sub>24</sub>) + (a <sub>33</sub>*c <sub>34</sub>)</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+    <p>\begin{bmatrix} (a_{11}c_{11} + a_{12}c_{21} + a_{13}c_{31}) & (a_{11}c_{12} + a_{12}c_{22} + a_{13}c_{32}) & (a_{11}c_{13} + a_{12}c_{23} + a_{13}c_{33}) & (a_{11}c_{14} + a_{12}c_{43} + a_{13}c_{34}) \\ (a_{21}c_{11} + a_{22}c_{21} + a_{23}c_{31}) & (a_{21}c_{12} + a_{22}c_{22} + a_{23}c_{32}) & (a_{21}c_{13} + a_{22}c_{23} + a_{23}c_{33}) & (a_{21}c_{14} + a_{22}c_{43} + a_{13}c_{24})
+       \\(a_{31}c_{11} + a_{32}c_{21} + a_{33}c_{31}) & (a_{31}c_{12} + a_{32}c_{22} + a_{33}c_{32}) & (a_{31}c_{13} + a_{32}b_{23} + a_{33}b_{33})  & (a_{31}c_{14} + a_{32}c_{43} + a_{33}c_{34})\end{bmatrix}</p><br>
+
+
 
   <p>With the real numbers in this looks like;</p>
 
-  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>(A X C)</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>(3*3) + (1*4) + (9*1)</td>
-                <td>(3*5) + (1*4) + (9*3)</td>
-                <td>(3*2) + (1*7) + (9*9)</td>
-                <td>(3*9) + (1*2) + (9*1)</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>(2*3) + (0*4) + (0*1)</td>
-                <td>(2*5) + (0*4) + (0*3)</td>
-                <td>(2*2) + (0*7) + (0*9)</td>
-                <td>(2*9) + (0*2) + (0*1)</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>(1*3) + (2*4) + (4*1)</td>
-                <td>(1*5) + (2*4) + (4*3)</td>
-                <td>(1*2) + (2*7) + (4*9)</td>
-                <td>(1*9) + (2*2) + (4*1)</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <p>\begin{bmatrix} (3x3) + (1x4) + (9x1) & (3x5) + (1x4) + (9x3) & (3x2) + (1x7) + (9x9) & (3x9) + (1x2) + (9x1) \\(2x3) + (0x4) + (0x1) & (2x5) + (0x4) + (0x3) & (2x2) + (0x7) + (0x9) & (2x9) + (0x2) + (0x1)\\(1x3) + (2x4) + (4x1) & (1x5) + (2x4) + (4x3) & (1x2) + (2x7) + (4x9) & (1x9) + (2x2) + (4x1)\end{bmatrix}</p><br>
+
+
 
   <p>Which once worked out comes to;</p>
 
-  <table style="padding: 10px;  margin-left: auto;  margin-right: auto;">
-    <tbody>
-      <tr>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>(A X C)</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-              </tr>
-              <tr>
-                <td>1</td>
-                <td>22</td>
-                <td>46</td>
-                <td>104</td>
-                <td>38</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>6</td>
-                <td>15</td>
-                <td>4</td>
-                <td>18</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>15</td>
-                <td>25</td>
-                <td>44</td>
-                <td>17</td>
-              </tr>
-            </tbody>
-          </table>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <p>\begin{bmatrix} 22 & 46 & 104 & 38 \\ 6 & 15 & 4 & 18\\15 & 25 & 44 & 17\end{bmatrix}</p><br>
 
 
 
 
   <hr>
-  <a href="index.html"><h5>Home</h5> </a>
+  <a href="index.html">
+    <h5>Home</h5>
+  </a>
   <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
   <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
 </body>

@@ -3,6 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <title>Determinants</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   <style>
     body {
       background-color: #92A9BD;
@@ -15,12 +18,14 @@
       height: 0;
       border-width: 5px;
     }
+
     mark.red {
-        color: "red";
-      }
+      color: "red";
+    }
+
     mark.blue {
-        color: "blue";
-      }
+      color: "blue";
+    }
   </style>
 </head>
 
@@ -36,24 +41,15 @@
   <p>Second-order Determinant: the value is equal to the product of the elements on the main diagonal minus the product of the
     elements on the secondary diagonal</p>
 
+  <center>
 
 
-  <table>
-    <tbody>
-      <tr>
-        <td>det(A) = |A| =</td>
-        <td>a</td>
-        <td>b</td>
-        <td>= ab-cd</td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>c</td>
-        <td>d</td>
-      </tr>
 
-    </tbody>
-  </table>
+    <p>det(A) = |A| =\begin{vmatrix} a & b\\ c & d\end{vmatrix} = ad - cb
+
+  </center>
+
+
 
   <h4>3x3</h4>
   <p>Third-order Determinant: the value is determined using a method of developing the minors of an element of the matrix. The minor of an element in a determinant is a determinant of
@@ -63,22 +59,11 @@
     <tr>
       <td> <img src="Images/3x3 determ.png" alt="Matrix Image"></td>
       <td>
-        <p>The Minor of a<sub>21</sub> is;</p>
-        <p>
-        <table>
-          <tbody>
-            <tr>
-              <td>a<sub>12</sub></td>
-              <td>a<sub>13</sub></td>
-            </tr>
-            <tr>
-              <td>a<sub>32</sub></td>
-              <td>a<sub>33</sub></td>
-            </tr>
 
-          </tbody>
-        </table>
-        </p>
+        <p>The Minor of a<sub>21</sub> is;
+        <p>\begin{bmatrix} a_{12} & a_{13} \\ a_{32} & a_{33} \end{bmatrix}</p><br></p>
+        <p>
+
 
       </td>
     </tr>
@@ -89,20 +74,19 @@
 
   <img src="Images/determ2.png" alt="Matrix Image">
 
-  <p>Cofactor of an element is the minor of the element attached with the sign factor, e.g. the cofactor of a<<sub>21</sub> is;</p>
+  <p>Cofactor of an element is the minor of the element attached with the sign factor, e.g. the cofactor of a<sub>21</sub> is;</p>
+
+
+
 
   <table>
     <tbody>
       <tr>
         <td>(-1)<sup>2+1</sup></td>
-        <td>|a<sub>12</sub></td>
-        <td>a<sub>13</sub>|</td>
+        <td>\begin{bmatrix} a_{12} & a_{13} \\ a_{32} & a_{33} \end{bmatrix}</td>
+
       </tr>
-      <tr>
-        <td></td>
-        <td>|a<sub>32</sub></td>
-        <td>a<sub>33</sub>|</td>
-      </tr>
+
 
     </tbody>
   </table>
@@ -119,128 +103,46 @@
 
   <p>To solve to blue box you would use the following calculation;</p>
 
-
   <table>
     <tbody>
       <tr>
-        <td>|A| = </td>
-        <td>+a<sub>11</sub> X</td>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>|a<sub>12</sub></td>
-                <td>a<sub>13</sub>|</td>
-              </tr>
-              <tr>
-                <td>|a<sub>32</sub></td>
-                <td>a<sub>33</sub>|</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </td>
-        <td>- a<sub>12</sub></td>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>|a<sub>21</sub></td>
-                <td>a<sub>23</sub>|</td>
-              </tr>
-              <tr>
-                <td>|a<sub>31</sub></td>
-                <td>a<sub>33</sub>|</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </td>
-        <td>+ a<sub>13</sub></td>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>|a<sub>21</sub></td>
-                <td>a<sub>22</sub>|</td>
-              </tr>
-              <tr>
-                <td>|a<sub>31</sub></td>
-                <td>a<sub>32</sub>|</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </td>
+        <td>a<sub>11</sub></td>
+        <td>\begin{bmatrix} a_{12} & a_{13} \\ a_{32} & a_{33} \end{bmatrix}</td>
+        <td>-a<sub>12</sub></td>
+        <td>\begin{bmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} \end{bmatrix}</td>
+        <td>+a<sub>13</sub></td>
+        <td>\begin{bmatrix} a_{21} & a_{22} \\ a_{31} & a_{32} \end{bmatrix}</td>
       </tr>
     </tbody>
   </table>
+
+
+
 
   <p>Or with the Green box;</p>
 
   <table>
     <tbody>
       <tr>
-        <td>|A| = </td>
-        <td>-a<sub>12</sub> X</td>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>|a<sub>21</sub></td>
-                <td>a<sub>23</sub>|</td>
-              </tr>
-              <tr>
-                <td>|a<sub>31</sub></td>
-                <td>a<sub>33</sub>|</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </td>
-        <td>+ a<sub>22</sub></td>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>|a<sub>11</sub></td>
-                <td>a<sub>13</sub>|</td>
-              </tr>
-              <tr>
-                <td>|a<sub>31</sub></td>
-                <td>a<sub>33</sub>|</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </td>
-        <td>- a<sub>32</sub></td>
-        <td>
-          <table>
-            <tbody>
-              <tr>
-                <td>|a<sub>11</sub></td>
-                <td>a<sub>13</sub>|</td>
-              </tr>
-              <tr>
-                <td>|a<sub>21</sub></td>
-                <td>a<sub>23</sub>|</td>
-              </tr>
-
-            </tbody>
-          </table>
-        </td>
+        <td>-a<sub>12</sub></td>
+        <td>\begin{bmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} \end{bmatrix}</td>
+        <td>+a<sub>22</sub></td>
+        <td>\begin{bmatrix} a_{11} & a_{13} \\ a_{31} & a_{33} \end{bmatrix}</td>
+        <td>-a<sub>32</sub></td>
+        <td>\begin{bmatrix} a_{11} & a_{13} \\ a_{21} & a_{23} \end{bmatrix}</td>
       </tr>
     </tbody>
   </table>
 
-  <p>For 3x3 matricesonly;</p>
+
+
+  <p>For 3x3 matrices only;</p>
 
   <img src="Images/determ4.png" alt="Matrix Image">
 
   <p>|A| = <font color="blue">a<sub>11</sub>a<sub>22</sub>a<sub>33</sub> + a<sub>12</sub>a<sub>23</sub>a<sub>31</sub> + a<sub>13</sub>a<sub>21</sub>a<sub>32</sub></font>
 
-  <font color="red">- a<sub>31</sub>a<sub>22</sub>a<sub>13</sub> - a<sub>32</sub>a<sub>23</sub>a<sub>11</sub> - a<sub>33</sub>a<sub>21</sub>a<sub>12</sub></font>
+    <font color="red">- a<sub>31</sub>a<sub>22</sub>a<sub>13</sub> - a<sub>32</sub>a<sub>23</sub>a<sub>11</sub> - a<sub>33</sub>a<sub>21</sub>a<sub>12</sub></font>
 
   <p>Properties of Determinates</p>
   <ol>
@@ -250,13 +152,6 @@
     <li>|AB| = |A||B|, if both 𝐴 and 𝐵 are 𝑛 × 𝑛 matrices.</li>
     <li>If two rows or two columns of a matrix are equal, the determinant of the matrix is zero.</li>
   </ol>
-
-
-
-
-
-
-
 
 
 
