@@ -6,18 +6,27 @@
   <title>Determinants</title>
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
   <style>
     body {
       background-color: #92A9BD;
+      margin: 100px;
     }
 
-    <title>Determinants</title>hr {
+    hr {
       border-color: #D3DEDC;
       border-style: dotted none none;
       width: 5%;
       height: 0;
       border-width: 5px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
     }
+
 
     mark.red {
       color: "red";
@@ -30,6 +39,11 @@
 </head>
 
 <body>
+
+<center>
+
+
+
   <h2>Determinates</h2>
 
   <p>In this section we will look at the determinants for 2x2 and 3x3 matrices. Every square matrix has a special quantity associated with it, called its determinant. The determinate is important
@@ -58,6 +72,7 @@
   <table cellspacing="20">
     <tr>
       <td> <img src="Images/3x3 determ.png" alt="Matrix Image"></td>
+
       <td>
 
         <p>The Minor of a<sub>21</sub> is;
@@ -94,9 +109,9 @@
   <p>So, the determinant of a 𝟑 × 𝟑 matrix is defined as follows:</p>
 
   <ol>
-    <li>Choose any row or any column to develop by minors.</li>
-    <li>Write the product of every element in that row or column and its signed factor, i.e. write its cofactor.</li>
-    <li>Add these products (cofactors) to get the value of the determinant.</li>
+    Choose any row or any column to develop by minors.<br>
+    Write the product of every element in that row or column and its signed factor, i.e. write its cofactor.<br>
+    Add these products (cofactors) to get the value of the determinant.<br>
   </ol>
 
   <img src="Images/determ3.png" alt="Matrix Image">
@@ -146,23 +161,29 @@
 
   <p>Properties of Determinates</p>
   <ol>
-    <li>|𝑘𝐴| = 𝑘<sup>𝑛</sup>|𝐴|, where 𝑛 is 𝐴’s size.</li>
-    <li>If 𝐵 is obtained from 𝐴 by interchanging two rows or columns, then: |B| = -A</li>
-    <li>Adding or subtracting a multiple of one row (or column) to another row (or column) leaves the determinant unchanged.</li>
-    <li>|AB| = |A||B|, if both 𝐴 and 𝐵 are 𝑛 × 𝑛 matrices.</li>
-    <li>If two rows or two columns of a matrix are equal, the determinant of the matrix is zero.</li>
+    |𝑘𝐴| = 𝑘<sup>𝑛</sup>|𝐴|, where 𝑛 is 𝐴’s size.<br>
+    If 𝐵 is obtained from 𝐴 by interchanging two rows or columns, then: |B| = -A <br>
+    Adding or subtracting a multiple of one row (or column) to another row (or column) leaves the determinant unchanged.<br>
+    |AB| = |A||B|, if both 𝐴 and 𝐵 are 𝑛 × 𝑛 matrices.<br>
+    If two rows or two columns of a matrix are equal, the determinant of the matrix is zero.<br>
   </ol>
 
 
 
+</center>
 
+  <br>
 
   <hr>
-  <a href="index.html">
-    <h5>Home</h5>
-  </a>
-  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
-  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+  <center>
+
+
+    <a href="index.html">
+      <h5>Home</h5>
+    </a>
+    <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+    <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+  </center>
 </body>
 
 </html>

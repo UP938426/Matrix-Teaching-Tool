@@ -3,31 +3,195 @@
   <head>
     <meta charset="utf-8">
     <title>2x2 Knowledge Confirmation</title>
-    <style>
-      body {
-        background-color: #92A9BD;
-      }
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="icon" href="favicon.ico" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/styles.css">
 
 
-      hr {
-        border-color: #D3DEDC;
-        border-style: dotted none none;
-        width: 5%;
-        height: 0;
-        border-width: 5px;
-      }
-    </style>
+
   </head>
   <body>
 
 
+  <center>
+    <h2>2x2 Knowledge confirmation</h2>
+    <p>This page will allow you to generate random 2x2 matrices to test your knowledge or solve an existing problem.  Once you have solved the problem click the answer button to see the result. </p>
+<div class="row">
+
+  <div class="col">
+    <div class="left">
+
+
+
+    <div class="matrices">
+
+
+
+
+      <table id="2x2matrixA">
+    <h5>Matrix A</h5>
+           <tbody>
+
+             <tr>
+               <td><input type="number" name="a11" id="a11" value="0" /> </td>
+               <td><input type="number" name="a12" id="a12" value="0" /> </td>
+             </tr>
+
+             <tr>
+               <td><input type="number" name="a21" id="a21" value="0" /> </td>
+               <td><input type="number" name="a22" id="a22" value="0" /> </td>
+             </tr>
+
+           </tbody>
+
+
+
+           <table id="2x2MatrixB">
+          <h5>Matrix B</h5>
+             <tbody>
+               <tr>
+                 <td><input type="number" name="b11" id="b11" value="0" /> </td>
+                 <td><input type="number" name="b12" id="b12" value="0" /> </td>
+               </tr>
+
+               <tr>
+                 <td><input type="number" name="b21" id="b21" value="0" /> </td>
+                 <td><input type="number" name="b22" id="b22" value="0" /> </td>
+               </tr>
+
+
+
+
+
+             </tbody>
+           </table>
+
+    </div>
+
+<p>Randomise</p>
+<p>
+  <button id="randomA" class="btn btn-primary">
+    Randomise Matrix A
+  </button>
+  <button id="randomB" class="btn btn-primary">
+    Randomise Matrix B
+  </button>
+</p>
+
+<p>Subtraction and Addition</p>
+
+<p>
+  <button id="addition2x2" class="btn btn-primary" class="addition2x2">
+    A + B
+  </button>
+  <button id="subtraction2x2AminusB" class="btn btn-primary" class="subtraction2x2AminusB">
+    A - B
+  </button>
+  <button id="subtraction2x2BminusA" class="btn btn-primary" class="subtraction2x2BminusA">
+    B - A
+  </button>
+
+</p>
+
+<p>Multiplication</p>
+<p>
+  <button id="multiplyAB2x2" class="btn btn-primary" class="multiplyAB2x2">
+    A x B
+  </button>
+  <button id="multiplyBA2x2" class="btn btn-primary" class="multiplyBA2x2">
+    B x A
+  </button>
+</p>
+
+
+<p>Inverse</p>
+
+<p>
+  <button id="inverseA" class="btn btn-primary" class="inverseA" class="calcbuttonsrow1">
+    Inverse A
+  </button>
+
+  <button id="inverseB" class="btn btn-primary" class="inverseB" class="calcbuttonsrow1">
+    Inverse B
+  </button>
+</p>
+
+<p>Transposition</p>
+<p>
+  <button id="transposeA2x2" class="btn btn-primary" class="transposeA2x2" class="calcbuttonsrow1">
+    Transpose Matrix A
+  </button>
+  <button id="transposeB2x2" class="btn btn-primary" class="transposeB2x2" class="calcbuttonsrow1">
+    Transpose Matrix B
+  </button>
+</p>
+
+<p>Determinants</p>
+<p>
+  <button id="determinantA2x2" class="btn btn-primary" class="determinantA2x2" class="calcbuttonsrow1">
+    Determinant of Matrix A
+  </button>
+  <button id="determinantB2x2" class="btn btn-primary" class="determinantB2x2">
+    Determinant of Matrix B
+  </button>
+</p>
+
+</div>
+</div>
+<div class="col">
+  <div class="right">
+
+
+
+<div class="answers" class="centre">
+   <table id="answerTable">
+     <p>Solution</p>
+
+     <tr>
+       <th><input type="number" name="ans11" id="ans11" value="0"></th>
+       <th><input type="number" name="ans12" id="ans12" value="0"></th>
+     </tr>
+     <tr>
+       <th><input type="number" name="ans21" id="ans21" value="0"></th>
+       <th><input type="number" name="ans22" id="ans22" value="0"></th>
+     </tr>
+
+
+
+
+   </table>
+ <p id="determinantAns" class="determinantAns">
+   </p>
+
+     <!-- <button type="button" class="btn btn-primary" id="showSteps">Display method</button> -->
+
+
+<p class="invisible">Write Steps</p>
+</div>
+</div>
+</div>
+</div>
+
+</center>
+
+
+
+
+
 
     <hr>
-    <a href="index.html">
-      <h5>Home</h5>
-    </a>
-    <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
-    <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+    <center>
 
+
+      <a href="index.html">
+        <h5>Home</h5>
+      </a>
+      <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+      <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+    </center>
+      <script src="JS\2x2test.js"></script> <!--link for JS to HTML-->
   </body>
-</html>
+
+  </html>
