@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>3x3 Matrix Addition and Subtraction</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+  <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+<body>
+  <center>
+
+
+  <h2>3x3 Matrix Addition and Subtraction</h2>
+  <p>This is exactly the same as 2x2, just with an extra row and column. The final matrix will be a 3x3, the same as the orginals.</p><br>
+  <div class ="row">
+    <div class="col">
+      <div class="left">
+        <center>
+
+
+
+  <p>If we have Matrices A and B</p><br>
+
+    &nbsp;&nbsp;A
+
+
+  <p>\begin{bmatrix} 3 & 1 & 9 \\ 2 & 0 & 0\\1 & 2 & 4\end{bmatrix}</p>
+
+
+    &nbsp;&nbsp;B
+
+
+  <p>\begin{bmatrix} 5 & 7 & 1 \\ 3 & 2 & 9\\1 & 1 & 2\end{bmatrix}</p>
+
+
+
+  <p>For Addition we would use the following maths.</p>
+
+  <p>\begin{bmatrix} 3+5 & 1+7 & 9+1 \\ 2+3 & 0+2 & 0+9\\1+1 & 2+1 & 4+2\end{bmatrix}</p>
+
+
+  <p>Giving us the result</p>
+
+<p>\begin{bmatrix} 8 & 8 & 10 \\ 5 & 2 & 9\\2 & 3 & 6\end{bmatrix}</p>
+
+  <p>For Subtraction we would use the following maths.</p>
+
+  <p>\begin{bmatrix} 3-5 & 1-7 & 9-1 \\ 2-3 & 0-2 & 0-9\\1-1 & 2-1 & 4-2\end{bmatrix}</p>
+
+<p>&nbsp;Resulting in;</p>
+
+<p>\begin{bmatrix} -2 & -6 & 8 \\ -1 & -2 & -9\\0 & 1 & 2\end{bmatrix}</p>
+
+
+  </center>
+
+</div>
+</div>
+
+<div class="col">
+<div class="right">
+<center>
+
+
+  <div class="matrices">
+
+
+    <table id="3x3matrixA">
+  <h5>Matrix A</h5>
+         <tbody>
+
+           <tr>
+             <td><input type="number" name="a11" id="a11" value="0" /> </td>
+             <td><input type="number" name="a12" id="a12" value="0" /> </td>
+             <td><input type="number" name="a13" id="a13" value="0" /> </td>
+           </tr>
+
+           <tr>
+             <td><input type="number" name="a21" id="a21" value="0" /> </td>
+             <td><input type="number" name="a22" id="a22" value="0" /> </td>
+             <td><input type="number" name="a23" id="a23" value="0" /> </td>
+           </tr>
+
+           <tr>
+             <td><input type="number" name="a31" id="a31" value="0" /> </td>
+             <td><input type="number" name="a32" id="a32" value="0" /> </td>
+             <td><input type="number" name="a33" id="a33" value="0" /> </td>
+           </tr>
+
+         </tbody>
+
+
+
+         <table id="3x3MatrixB">
+        <h5>Matrix B</h5>
+           <tbody>
+             <tr>
+               <td><input type="number" name="b11" id="b11" value="0" /> </td>
+               <td><input type="number" name="b12" id="b12" value="0" /> </td>
+               <td><input type="number" name="b13" id="b13" value="0" /> </td>
+             </tr>
+
+             <tr>
+               <td><input type="number" name="b21" id="b21" value="0" /> </td>
+               <td><input type="number" name="b22" id="b22" value="0" /> </td>
+               <td><input type="number" name="b23" id="b23" value="0" /> </td>
+             </tr>
+             <tr>
+               <td><input type="number" name="b31" id="b31" value="0" /> </td>
+               <td><input type="number" name="b32" id="b32" value="0" /> </td>
+               <td><input type="number" name="b33" id="b33" value="0" /> </td>
+             </tr>
+
+
+
+
+
+           </tbody>
+         </table>
+
+  </div>
+
+<p>Randomise</p>
+<p>
+<button id="randomA" class="btn btn-primary">
+  Randomise Matrix A
+</button>
+<button id="randomB" class="btn btn-primary">
+  Randomise Matrix B
+</button>
+</p>
+
+<p>Subtraction and Addition</p>
+
+<p>
+<button id="addAB" class="btn btn-primary" class="addAB">
+  A + B
+</button>
+<button id="subtractAB" class="btn btn-primary" class="subtractAB">
+  A - B
+</button>
+<button id="subtractBA" class="btn btn-primary" class="subtractBA">
+  B - A
+</button>
+</p>
+<div class="answers" class="centre">
+   <table id="answerTable" style="display: none;">
+     <p>Solution</p>
+
+     <tr>
+       <th><input type="number" name="ans11" id="ans11" value="0"></th>
+       <th><input type="number" name="ans12" id="ans12" value="0"></th>
+       <th><input type="number" name="ans13" id="ans13" value="0"></th>
+     </tr>
+     <tr>
+       <th><input type="number" name="ans21" id="ans21" value="0"></th>
+       <th><input type="number" name="ans22" id="ans22" value="0"></th>
+       <th><input type="number" name="ans23" id="ans23" value="0"></th>
+     </tr>
+     <tr>
+       <th><input type="number" name="ans31" id="ans31" value="0"></th>
+       <th><input type="number" name="ans32" id="ans32" value="0"></th>
+       <th><input type="number" name="ans33" id="ans33" value="0"></th>
+     </tr>
+</table>
+
+<p id="Answer" class="centre" style="display: none;">
+</p>
+
+
+</div>
+
+  <div id = "MethodExplain" class="invisibleSteps">
+
+  <button type="button" id=MethodPress class="btn btn-primary" style="display: none;">Display Method</button>
+  <p class="Method" class="btn btn-primary" id="Method" style="display: none;"> Method   </p>
+<br>
+  <button type="button" id=ExplainPress class="btn btn-primary" style="display: none;">Explain the Solution</button>
+  <p class="Explain" class="btn btn-primary" id="Explain" style="display: none;"> Explanation   </p>
+
+
+
+
+</div>
+<br>
+  <p>For more questions head to the 3x3 Knowledge confirmation page.</p>
+</center>
+<br>
+</div>
+</div>
+
+
+
+
+
+<center>
+
+<br><br><br><br><br><br><br><br><br><br>
+<hr>
+  <a href="index.html">
+    <h5>Home</h5>
+  </a>
+  <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+  <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+</center>
+<script src="JS\3x3SM.js"></script> <!--link for JS to HTML-->
+</body>
+
+</html>

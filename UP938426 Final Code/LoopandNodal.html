@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Mesh Analysis</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <style>
+    body {
+      background-color: #92A9BD;
+      margin: 100px;
+    }
+
+    hr {
+      border-color: #D3DEDC;
+      border-style: dotted none none;
+      width: 5%;
+      height: 0;
+      border-width: 5px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+  </style>
+</head>
+  <body>
+
+    <center>
+      <h2>Mesh Analysis</h2>
+
+      <p>In this lesson we will look at Mesh Analysis of circuits.  There are three steps to the progess that need to be worked through; </p>
+
+
+<p>1. Assign mesh currents to all of the meshes in the circuit.</p>
+<p>2. Apply Kirchhoff's Voltage Law to each mesh and apply Ohm's Law to determine the voltages with the mesh currents.</p>
+<p>3. Solve the resulting simultaneous equation.</p>
+
+<p>Firstly, Kirchhoff's Voltage Law states that in any complete loop within a circuit, the sum of all voltages across components which supply electrical energy must equal the sum of all voltages across the other components in the same loop.</p>
+<p>Secondly, Ohm's Law states that the current through a conductor between two points is directly proportional to the voltage across the two points. Introducing the constant of proportionality, the resistance, one arrives at the usual mathematical equation that describes this relationship I = V / R.</p>
+
+<h5>Putting it into practice.</h5>
+
+<p><img src="Images/mesh.png" alt="Matrix Image"></p>
+
+<p>Looking at Loop One, we can see the current is going from the positive end of the cell clockwise around the loop with the current passes through R1 and R4.  However we need to also look at Loop Two as it shares a resistor (R4) with Loop One.  As we can see the current from Loop 2 is going through R4 in the opposite direction to that of Loop 1.  Loop 3 and Loop 1 do not share anything so can be left as zero in the equation.
+Once we have got all of this information we can form the equation ;</p>
+<p>Mesh 1: V1 = I1(R1+R4) - I2(R4) + I3(0)</p>
+<p>Doing the same for loops 2 and 3 we get the equations;</p>
+<p>Mesh 2: V2 = -I1(R4) + I2(R4+R2+R5) - I3(R5)</p>
+<p>Mesh 3: V3 = I1(0) - I2(R5) + I3(R5+R3+R6)</p>
+
+<p>From here we can create three matrices, R, I and V.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>\begin{bmatrix} (R1+R4) & -R4 & 0 \\ -R4 & (R4+R2+R5) & -R5 \\ 0 & -R5 & (R5+R3+R6) \end{bmatrix}</td>
+      <td>\begin{bmatrix} I1 \\ I2 \\ I3 \end{bmatrix}</td>
+      <td>\begin{bmatrix} V1 \\ 0 \\ V2 \end{bmatrix}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Let us substitute in some example numbers so we can work through the problem.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>R1 = 2, R2 = 4, R3 = 5, R4 = 1, R5 = 2, R6 = 5</td>
+     </tr>
+     <tr>
+      <td>V1 = 5, V2 = 10</td>
+     </tr>
+  </tbody>
+</table>
+<br>
+<table>
+  <tbody>
+    <tr>
+      <td>\begin{bmatrix} 3 & -1 & 0 \\ -1 & 7 & -2 \\ 0 & -2 & 12 \end{bmatrix}</td>
+      <td>\begin{bmatrix} I1 \\ I2 \\ I3 \end{bmatrix}</td>
+      <td>\begin{bmatrix} 5 \\ 0 \\ 10 \end{bmatrix}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>To solve the problem we need to find the values of I, this requires us to rearrange that system to get the inverse of matrix R * matrix V to give us matrix I.</p>
+<p>All of the following functions can be revised in their own lessons on the Home page.</p>
+
+<p>The first step is to find the determinant of R, to do this we carry out the following maths;</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>a<sub>11</sub></td>
+      <td>\begin{bmatrix} a_{22} & a_{23} \\ a_{32} & a_{33} \end{bmatrix}</td>
+      <td>-a<sub>12</sub></td>
+      <td>\begin{bmatrix} a_{21} & a_{23} \\ a_{31} & a_{33} \end{bmatrix}</td>
+      <td>+a<sub>13</sub></td>
+      <td>\begin{bmatrix} a_{21} & a_{22} \\ a_{31} & a_{32} \end{bmatrix}</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<table>
+  <tbody>
+    <tr>
+      <td>3</td>
+      <td>\begin{bmatrix} 7 & -2 \\ -2 & 12 \end{bmatrix}</td>
+      <td>--1</sub></td>
+      <td>\begin{bmatrix} -1 & -2 \\ 0 & 12 \end{bmatrix}</td>
+      <td>+0</sub></td>
+      <td>\begin{bmatrix} -1 & 7 \\ 0 & -2 \end{bmatrix}</td>
+    </tr>
+  </tbody>
+</table>
+
+<p></p>
+
+<p>Det(R) = 240 - 12 + 0</p>
+
+<p>Det(R) = 228</p>
+
+<p>The next step is to transpose the matrix, in this case the transposed matrix is the same as the original.</p>
+
+<p>\begin{bmatrix} 3 & -1 & 0 \\ -1 & 7 & -2 \\ 0 & -2 & 12 \end{bmatrix}</p>
+
+<p>The next stage is the most time consuming and prone to mistake.  We need to find the determinant of each of the 2x2 minor matricies. To find the right minor matrix for each term, first highlight the row and column of the term you begin with. This should include five terms of the matrix. The
+  remaining four terms make up the minor matrix.  Once you have replaced all of the values in this way the matrix needs to be turned into a matrix of cofactors by reversing the signs on alternating terms. This will give you the Adjoint Matrix.</p>
+
+
+<p>\begin{bmatrix} 80 & 12 & 2 \\ 12 & 36 & 5 \\ 2 & 6 & 20 \end{bmatrix}</p>
+
+
+<p>To finally complete the inverse of Matrix R we need to multiply the Adjoint by 1/Det(R), which give us;</p>
+
+<p>\begin{bmatrix} 0.351 & 0.052 & 0.009 \\ 0.052 & 0.158 & 0.022 \\ 0.009 & 0.263 & 0.088 \end{bmatrix}</p>
+
+<p>Now to take this martix and calculate I - R<sup>-1</sup> * V</p>
+<p>To do this we need to take the Determinant of R<sup>-1</sup> and then replace the column in turn with the values of Matrix V, and then calculate each of the new determinates.  This will become clearer as we work thorugh.</p>
+
+<p>Firstly Det(R<sup>-1</sup>) =  0.351(0.158 * 0.088 - 0.263 * 0.022) - 0.052(0.052 * 0.088 - 0.009 * 0.022) + 0.009(0.052 * 0.263 - 0.009 * 0.158) = 0.002732  </p>
+
+<p>Now to replace the columns and calculate the determinates of I1, I2 and I3.  These will then be divided by Det(R<sup>-1</sup>) to get the original I1, I2 and I3 values.</p>
+
+
+<p>\begin{bmatrix} 5 & 0.052 & 0.009 \\ 0 & 0.158 & 0.022 \\ 10 & 0.263 & 0.088 \end{bmatrix}</p></p>
+
+<p>Det(I1) = 5(0.158 * 0.088 - 0.263 * 0.022) - 0.052(0 * 0.088 - 10 * 0.022) + 0.009(0 * 0.263 - 10 * 0.158) = 0.03781 </p>
+<p>Now divide this by Det(R<sup>-1</sup>) to get I1 : 0.03781/0.002732 = 13.84</p>
+
+<p>\begin{bmatrix} 0.351 & 5 & 0.009 \\ 0.052 & 0 & 0.022 \\ 0.009 & 10 & 0.088 \end{bmatrix}</p>
+
+<p>Det(I2) = 0.351(0 * 0.088 - 10 * 0.022) - 5(0.052 * 0.088 - 0.009 * 0.022) + 0.009(0.052 * 10 - 0 * 0.009) = -0.09443 </p>
+<p>Now divide this by Det(R<sup>-1</sup>) to get I2 : -0.09443/0.002732 = -34.56</p>
+
+<p>\begin{bmatrix} 0.351 & 0.052 & 5 \\ 0.052 & 0.158 & 0 \\ 0.009 & 0.263 & 10 \end{bmatrix}</p>
+
+<p>Det(I3) = 0.351(0.158 * 10 - 0.263 * 0) - 0.052(0.052 * 10 - 0.009 * 0) + 5(0.052 * 0.263 - 0.158 * 0.009) = 0.58881 </p>
+<p>Now divide this by Det(R<sup>-1</sup>) to get I3 : 0.58881/0.002732 = 215.52</p>
+
+<p>This gives you all the values required for the circuit.  As you can see the numbers can become unwieldly, however random numbers were used here to show that if the method is followed carefully it can be acheived with easy.  If any further revision is required please check out the other lessons on the home page.</p>
+
+
+
+
+
+
+
+
+
+
+</center>
+
+
+
+
+
+
+
+
+
+
+    <center>
+
+
+      <a href="index.html">
+        <h5>Home</h5>
+      </a>
+      <p>Created by UP938426 - <a href="Contact.html">Contact details</a></p>
+      <p>Project Supervisor - <a href="https://www.port.ac.uk/about-us/structure-and-governance/our-people/our-staff/john-geddes">Dr John Geddes</a></p>
+    </center>
+  </body>
+</html>
