@@ -1,0 +1,27 @@
+body {
+  background-color: #92A9BD;
+  margin: 100px;
+}
+
+hr {
+  border-color: #D3DEDC;
+  border-style: dotted none none;
+  width: 5%;
+  height: 0;
+  border-width: 5px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.left, .right{
+height: 85vh;
+width:100%;
+}
+
+.MathJax, .MathJax_Display  {
+    /* text-align: center !important; */
+    font-size: 85%  !important;
+}
